@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <h3>Username</h3>
+  <h3>sami2bx</h3>
   <p>{{ description }}</p>
 </template>
 
