@@ -29,6 +29,6 @@
 <style scoped>
   .tiktok {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
   }
 </style>
