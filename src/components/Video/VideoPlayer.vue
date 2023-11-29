@@ -26,11 +26,17 @@
 </script>
 
 <template>
-    <div>
+    <div class="video-container">
         <video :src="videoUrl" controls autoplay muted></video>
     </div>
 </template>
 
 <style scoped>
-
+    .video-container {
+        margin-right: 4%;
+    }
+    video {
+        width: 100%;
+        height: auto;
+    }
 </style>
