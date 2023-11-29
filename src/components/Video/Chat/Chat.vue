@@ -63,7 +63,8 @@ const sendMessage = async () => {
     <div>
         <ul>
             <li v-for="m in allMessages.data" :key="m._id">
-                {{ m.user }}: {{ m.message }}
+                <span class="user">{{ m.user }}:</span>
+                <span class="message">{{ m.message }}</span>
             </li>
         </ul>
 
@@ -75,39 +76,39 @@ const sendMessage = async () => {
 </template>
 
 <style scoped>
-    .chat-input {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1em;
-    }
+.chat-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
 
-    input {
-        width: 100%;
-        padding: 0.5em;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+input {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-    button {
-        padding: 0.5em 1em;
-        border: none;
-        border-radius: 5px;
-        background-color: #ccc;
-        color: #fff;
-        cursor: pointer;
-    }
+button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+}
 
-    button:hover {
-        background-color: #aaa;
-    }
+button:hover {
+    background-color: #aaa;
+}
 
-    ul {
-        list-style: none;
-        padding: 0;
-    }
+ul {
+    list-style: none;
+    padding: 0;
+}
 
-    li {
-        margin-bottom: 0.5em;
-    }
+li {
+    margin-bottom: 0.5em;
+}
 </style>
