@@ -67,11 +67,47 @@ const sendMessage = async () => {
             </li>
         </ul>
 
-        <div>
-            <input v-model="message" type="text" placeholder="">
+        <div class="chat-input">
+            <input v-model="message" type="text" placeholder="Add comment..">
             <button @click="sendMessage">Send</button>
         </div>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+    .chat-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1em;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #ccc;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #aaa;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 0.5em;
+    }
+</style>
