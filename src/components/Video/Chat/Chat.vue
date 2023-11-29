@@ -62,8 +62,8 @@ const sendMessage = async () => {
 <template>
     <div>
         <ul>
-            <li v-for="m in allMessages.data" :key="m._id">
-                <span class="user">{{ m.user }}:</span>
+            <li class="message-item" v-for="m in allMessages.data" :key="m._id">
+                <span class="user">{{ m.user }}</span>
                 <span class="message">{{ m.message }}</span>
             </li>
         </ul>
@@ -108,7 +108,20 @@ ul {
     padding: 0;
 }
 
-li {
-    margin-bottom: 0.5em;
+.message-item {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.user {
+    font-weight: bold;
+    margin-bottom: 0.2em;
+    font-size: 0.9em;
+}
+
+.message {
+    font-size: 0.8em;
 }
 </style>
