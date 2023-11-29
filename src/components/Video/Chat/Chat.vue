@@ -28,27 +28,26 @@ onMounted(async () => {
 // POST request to the API to send a message
 const sendMessage = async () => {
     try {
+        // create a temporary variable to hold new message
+        const newMessage = {
+            user: 'NANIO',
+            message: message.value,
+        };
+
         // send a POST request to the API with the message
         const response = await fetch('https://nodejs-messages.onrender.com/api/v1/messages', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                user: 'NANIO',
-                message: message.value,
-            }),
+            body: JSON.stringify(newMessage),
         });
 
         const responseData = await response.json(); // parse the response
 
         // if the response is successful, add the message to the local messages data
         if (responseData.status === 'success') {
-            allMessages.data.push({
-                user: responseData.data.user,
-                message: responseData.data.message,
-            });
-
+            allMessages.data.push(newMessage); // add the message to the local messages data
             message.value = ""; // clear input field
         } else {
             console.error('Failed to send message');
